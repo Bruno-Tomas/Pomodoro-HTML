@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-theme">
+    <div class="container" id="container">
+        <div class="theme-toggle">
+            <button id="theme-btn"><i class="fas fa-moon"></i></button>
+        </div>
+        
+        <div class="timer-container">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="timer-mode" id="timer-mode">Pomodoro</div>
+            <div class="controls">
+                <button id="start-btn"><i class="fas fa-play"></i></button>
+                <button id="pause-btn"><i class="fas fa-pause"></i></button>
+                <button id="skip-btn"><i class="fas fa-forward"></i></button>
+                <button id="reset-btn"><i class="fas fa-redo"></i></button>
+            </div>
+            <button id="settings-btn"><i class="fas fa-cog"></i> Configuración</button>
+        </div>
+
+        <div class="datetime">
+            <div id="current-date"></div>
+            <div id="current-time"></div>
+        </div>
+
+        <div class="settings-modal" id="settings-modal">
+            <div class="settings-content">
+                <h2><i class="fas fa-cog"></i> Configuración</h2>
+                <div class="setting">
+                    <label for="pomodoro-time">Pomodoro (minutos):</label>
+                    <input type="number" id="pomodoro-time" min="1" max="60" value="25">
+                </div>
+                <div class="setting">
+                    <label for="break-time">Descanso (minutos):</label>
+                    <input type="number" id="break-time" min="1" max="60" value="5">
+                </div>
+                <div class="modal-buttons">
+                    <button id="save-settings"><i class="fas fa-save"></i> Guardar</button>
+                    <button id="close-settings"><i class="fas fa-times"></i> Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <audio id="alarm-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.wav" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
